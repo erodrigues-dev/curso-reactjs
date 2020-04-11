@@ -15,14 +15,13 @@ import {
 import { useCallback } from "react";
 
 export default function Main() {
-  const limit = 3;
   const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(0);
 
-  const loadProducts = useCallback(async (page, limit) => {
+  const loadProducts = useCallback(async (page) => {
     const response = await api.get("/products", {
-      params: { page, limit },
+      params: { page, limit: 5 },
     });
     const { docs, pages } = response.data;
     setPages(pages);
@@ -30,7 +29,7 @@ export default function Main() {
   }, []);
 
   useEffect(() => {
-    loadProducts(page, limit);
+    loadProducts(page);
   }, [page, loadProducts]);
 
   function handlePaginate(increment) {

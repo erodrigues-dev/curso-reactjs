@@ -1,7 +1,15 @@
 import React from "react";
 
-// import { Container } from './styles';
+import Header from "./components/Header";
+import "./styles.css";
 
-export default function src() {
-  return <h1>Hello world!</h1>;
+import Main from "./pages/Main";
+
+export default function App() {
+  return (
+    <div className="App">
+      <Header />
+      <Main />
+    </div>
+  );
 }

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   max-width: 700px;
@@ -24,7 +25,7 @@ export const Description = styled.p`
   line-height: 24px;
 `;
 
-export const Button = styled.a`
+export const Button = styled(Link)`
   height: 42px;
   border-radius: 5px;
   border: 2px solid #da552f;

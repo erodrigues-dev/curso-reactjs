@@ -44,7 +44,7 @@ export default function Main() {
         <Item key={item._id}>
           <Title>{item.title}</Title>
           <Description>{item.description}</Description>
-          <Button>Acessar</Button>
+          <Button to={`/products/${item._id}`}>Acessar</Button>
         </Item>
       ))}
       <Paginate>
